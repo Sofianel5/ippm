@@ -55,15 +55,21 @@ async function getPackageData(db, packageName) {
 }
 
 async function getPackage(orbitdb, db, packageName, packageVersion) {
+    // console.log('getPackage')
     const packageData = await getPackageData(db, packageName)
+    console.log(packageData)
     const versions = await orbitdb.eventlog(packageData.packages)
+    console.log('abt to load')
     await versions.load()
+    console.log('loaded')
     for (const release of versions.iterator({ limit: -1 }).collect()) {
-        console.log("release", release)
+        // console.log("release", release)
+        console.log(release.payload.value.platforms)
         if (release.version == packageVersion) {
             return release.cid
         }
     }
+    console.log('done loopin')
     return null
 }
 
@@ -96,6 +102,7 @@ async function addPackage(ipfs, orbitdb, db) {
         packageData.platforms[platform].hash = platformHash.path
     }
     packageDb.add(packageData)
+    console.log("added packages")
 }
 
 async function main () {
