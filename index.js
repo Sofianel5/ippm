@@ -107,7 +107,11 @@ async function addPackage(ipfs, orbitdb, db) {
 
 async function main () {
     // console.log('hi')
-    const ipfsOptions = { repo: './ipfs',}
+    const ipfsOptions = { 
+        repo: './ipfs',
+        relay: { enabled: true, hop: { enabled: true, active: true } },
+        EXPERIMENTAL: { pubsub: true },
+    }
     console.log('before')
     const ipfs = await IPFS.create(ipfsOptions)
     console.log('after')
