@@ -1,0 +1,24 @@
+{
+  "name": "ippm",
+  "version": "1.0.0",
+  "description": "Distributed package manager",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sofianel5/ippm.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Sofianel5/ippm/issues"
+  },
+  "homepage": "https://github.com/Sofianel5/ippm#readme",
+  "dependencies": {
+    "orbit-db": "^0.28.7"
+  },
+  "type": "module"
+}
