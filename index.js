@@ -118,8 +118,8 @@ async function main () {
     // const ipfs = new IPFS();
     const orbitdb = await OrbitDB.createInstance(ipfs)
     console.log('IPFS node is ready')
-    // const db = await loadDB(orbitdb, 'ippm')
-    const db = await orbitdb.keyvalue('/orbitdb/zdpuAmUKRWgTpjvDSBpYoisAYnCG8mF5mpqBhW1Yzye9UgWLW/ippm')
+    const db = await loadDB(orbitdb, 'ippm')
+    // const db = await orbitdb.keyvalue('/orbitdb/zdpuAmUKRWgTpjvDSBpYoisAYnCG8mF5mpqBhW1Yzye9UgWLW/ippm')
     console.log(db.id)
 
     const option = process.argv[2]
